@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${MACHINE_FQDN:?"Set the environment variable GITLAB_HOST before running the script. (example: 'export MACHINE_FQDN=www.example.com'"}
+: ${MACHINE_FQDN:?"Set the environment variable MACHINE_FQDN specifying the domain url before running the script. (example: 'export MACHINE_FQDN=www.example.com'"}
 
 HEADER="Docker portus -"
 
