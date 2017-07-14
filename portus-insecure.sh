@@ -18,9 +18,9 @@ fi
 wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/docker-compose-insecure.yml
 mv docker-compose-insecure.yml docker-compose.yml
 
-wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/config.yml
+wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/config-insecure.yml
 mkdir -p ./registry/config
-sudo mv config.yml ./registry/config/.
+sudo mv config-insecure.yml ./registry/config/config.yml
 
 # Running the services
 
