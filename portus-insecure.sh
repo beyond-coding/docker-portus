@@ -4,7 +4,7 @@
 
 HEADER="Docker portus -"
 
-# Getting the docker-compose file
+# Checking for consistency
 
 FILE="docker-compose.yml"
 if [ -f "$FILE" ]
@@ -15,12 +15,24 @@ else
     echo "$HEADER getting docker-compose file."
 fi
 
+# Getting the docker-compose file
+
 wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/docker-compose-insecure.yml
 mv docker-compose-insecure.yml docker-compose.yml
+
+# Getting the registry config file
 
 wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/config-insecure.yml
 mkdir -p ./registry/config
 sudo mv config-insecure.yml ./registry/config/config.yml
+
+# Getting the portus certificate
+
+wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/portus.crt
+sudo cp portus.crt ./secrets/.
+sudo cp portus.crt /usr/local/share/ca-certificates
+update-ca-certificates
+rm portus.crt
 
 # Running the services
 
