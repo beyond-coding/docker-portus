@@ -1,0 +1,14 @@
+To interact with an insecure repo, the first thing is to configure the Docker daemon in your machine to accept working with HTTP instead of HTTPS.
+
+Edit the file /etc/docker/daemon.json, or create it if it doesn't exist, and add the following lines:
+
+
+{
+  "insecure-registries": [
+    "your-repo:5000",
+    "your-repo:5001"
+  ],
+  "disable-legacy-registry": true
+}
+
+You have to restart the daemon after setting this (sudo systemctl restart docker).

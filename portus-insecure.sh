@@ -32,7 +32,7 @@ wget https://raw.githubusercontent.com/beyond-coding/docker-portus/master/portus
 mkdir -p ./secrets
 sudo cp portus.crt ./secrets/.
 sudo cp portus.crt /usr/local/share/ca-certificates
-update-ca-certificates
+sudo update-ca-certificates
 rm portus.crt
 
 # Running the services
